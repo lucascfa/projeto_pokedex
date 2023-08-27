@@ -14,7 +14,6 @@
  margin: .5rem;
  padding: 1rem;
  border-radius: 1rem;
- background-color: #6ec2a4;
 }
 
 
@@ -29,6 +28,7 @@
     text-transform: capitalize;
     color: white;
     margin-bottom: .25rem;
+    text-transform: capitalize;
 }
 
 .pokemon .detail{
@@ -44,15 +44,18 @@
     list-style: none;
 }
 .pokemon .detail .types .type {
- background-color: #6ec2a4;
- color: white;
+ color: black;
+ background-color: white;
  padding: .25rem .5rem;
  font-size: .625rem;
  margin: .25rem 0;
  border-radius: 1rem;
  text-align: center;
-
+ opacity: 0.5;
+ filter: brightness(1.1);
+ text-transform: capitalize;
 }
+
 
 .pokemon .detail img{
     max-width: 100%;
@@ -161,3 +164,22 @@
     }
 }
 
+
+.paginacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+}
+.paginacao button {
+    padding: 0.80rem;
+    font-size: 1.25rem;
+    color: white;
+    border-radius: 2rem;
+    background-color: #6C79DB;
+    border: none;
+
+
+}

@@ -1,36 +1,49 @@
-const OFFSET = 0;
-const LIMIT = 10;
-const URL = `https://pokeapi.co/api/v2/pokemon/?offset=${OFFSET}&limit=${LIMIT}`;
+const pokemonLista = document.getElementById('listaPokemon');
+const botaoCarregar = document.getElementById('mostrarMais');
+const limit = 5;
+let offset = 0;
+let total = 27;
 
 function convertPokemonToLi(pokemon){
     return `
-    <li class="pokemon">
-    <span class="number">#001</span>
+    <li class="pokemon ${pokemon.type}">
+    <span class="number">#${pokemon.ordem}</span>
      <span class="name">${pokemon.name}</span>
 
      <div class="detail">
         <ol class="types">
-            <li class="type">Grass</li>
-            <li class="type">Poison</li>
+            ${pokemon.types.map((type) => `<li class="type"><span>${type}</span></li>`).join('')}
         </ol>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/11.svg" alt="${pokemon.name}">
+        <img src="${pokemon.image}" alt="${pokemon.name}">
     </div>
 </li>
     `
 }
 
-const pokemonLista = document.getElementById('listaPokemon');
 
+function carregarMais(offset, limit){
+    pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+        const newHtml = pokemons.map(convertPokemonToLi).join('');
+        pokemonLista.innerHTML += newHtml;
+    });
+}
 
-fetch(URL)
-.then((response) => response.json())
-.then((responseBody) => responseBody.results)
-.then((pokemons) => {
+carregarMais(offset, limit);
 
-    for(let i = 0; i < pokemons.length; i++){
-        const pokemon = pokemons[i]
-        pokemonLista.innerHTML += convertPokemonToLi(pokemon);
+pokeApi.getTotalPokemons();
+
+botaoCarregar.addEventListener('click', ()=>{
+        offset += limit;
+        const qtd_proxima_page = offset + limit;
+    if(qtd_proxima_page >= total){
+        const novo_limite = total - offset;
+        console.log("offset maior que total: "+ total + "offset: " + offset)
+        carregarMais(offset, novo_limite);
+        botaoCarregar.parentElement.removeChild(botaoCarregar);
+        
+    }else{
+        carregarMais(offset, limit);
+
     }
-})
-.catch((error) => console.log(error));
 
+})
