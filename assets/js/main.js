@@ -2,7 +2,6 @@ const pokemonLista = document.getElementById('listaPokemon');
 const botaoCarregar = document.getElementById('mostrarMais');
 const limit = 5;
 let offset = 0;
-let total = 27;
 
 function convertPokemonToLi(pokemon){
     return `
@@ -35,9 +34,9 @@ pokeApi.getTotalPokemons();
 botaoCarregar.addEventListener('click', ()=>{
         offset += limit;
         const qtd_proxima_page = offset + limit;
-    if(qtd_proxima_page >= total){
-        const novo_limite = total - offset;
-        console.log("offset maior que total: "+ total + "offset: " + offset)
+    if(qtd_proxima_page >= totalPokemon){
+        const novo_limite = totalPokemon - offset;
+        console.log("offset maior que total: "+ totalPokemon + "offset: " + offset)
         carregarMais(offset, novo_limite);
         botaoCarregar.parentElement.removeChild(botaoCarregar);
         
