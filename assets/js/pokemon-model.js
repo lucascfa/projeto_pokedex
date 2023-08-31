@@ -4,4 +4,10 @@ class Pokemon{
     type;
     types = [];
     image;
+    habilidades = [];
+    especie;
+    tamanho;
+    peso;
+    stats = []
+    base_stats = []
 }
