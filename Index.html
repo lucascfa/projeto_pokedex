@@ -20,7 +20,7 @@
 
 </head>
 <body>
- <section class="content">
+ <section class="content" id="secao_pokemons" aria-readonly="true">
     <h1>Poke10s</h1>
 
  <ol class="pokemons" id="listaPokemon">
@@ -32,72 +32,74 @@
 </div>
 
  </section>
- <section class="modal">
-   <div class="modal_pokemon" id="modal">
-      <div class="detalhes_pokemon">
-        <div class="botoes">
-           <i class="fa fa-long-arrow-left" aria-hidden="true" onclick="fecharModal()"></i>
-           <i class="fa fa-heart-o" aria-hidden="true"></i>
-        </div>
-        <span class="name_pokemon" id="txt_nome">nome pokemon</span>
-        <span class="numero_pokemon" id="txt_numero">#001</span>
-        <ul class="types_pokemons" id="ol_detalhe_pokemon">
-           <li id="txt_type1">tipo 1</li>
-           <li id="txt_type2">tipo 2</li>
-     <!--carrega lista de tipos do pokemon-->
-        </ul>
-        <img class="imagem_detalhe_pokemon" id="imagem_pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg">
-        <div class="detalhamento_status">
-         <span>Informações Gerais</span>
-         <ul class="lista_caracteristicas">
-            <!--Apresenta caracteristicas do pokemon como "Espécie", "Tamanho", "Peso" e "habilidades"-->
-            <li><span class="campo">Espécie:</span>
-               <span class="valor" id="txt_especie">Valor</span>
-            </li>
-            <li><span class="campo">Tamanho:</span>
-               <span class="valor" id="txt_tamanho">Valor</span>
-            </li>
-            <li><span class="campo">Peso:</span>
-               <span class="valor" id="txt_peso">Valor</span>
-            </li>
-            <li><span class="campo">Habilidades:</span>
-               <span class="valor" id="txt_habilidades">Valor</span>
-            </li>
-         </ul>
-         <span>Status</span>
-         <ul>
-            <li><span id="stats1">status 1</span>
-               <div class="barra_background">
-                  <div class="barra_status_1" id="barra_status_1"></div>
-               </div>
-            </li>
-            <li><span id="stats2">status 2</span>
-               <div class="barra_background">
-                  <div class="barra_status_2" id="barra_status_2"></div>
-               </div>
-            </li>
-            <li><span id="stats3">status 3</span>
-               <div class="barra_background">
-                  <div class="barra_status_3" id="barra_status_3"></div>
-               </div>
-            </li>
-            <li><span id="stats4">status 4</span>
-               <div class="barra_background">
-                  <div class="barra_status_4" id="barra_status_4"></div>
-               </div>
-            </li>
-            <li><span id="stats5">status 5</span>
-               <div class="barra_background">
-                  <div class="barra_status_5" id="barra_status_5"></div>
-               </div>
-            </li>
-         </ul>
-       </div>
-       </div>
-      </div>
+ <section>
+   <div class="fundo_escuro" id="fundo_back">
+
+      <div class="modal_pokemon" id="modal">
+         <div class="detalhes_pokemon">
+           <div class="botoes">
+              <i class="fa fa-long-arrow-left" aria-hidden="true" onclick="fecharModal()"></i>
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+           </div>
+           <span class="name_pokemon" id="txt_nome">nome pokemon</span>
+           <span class="numero_pokemon" id="txt_numero">#001</span>
+           <ul class="types_pokemons" id="ol_detalhe_pokemon">
+              <li id="txt_type2">tipo 2</li>
+        <!--carrega lista de tipos do pokemon-->
+           </ul>
+           <img class="imagem_detalhe_pokemon" id="imagem_pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg">
+           <div class="detalhamento_status">
+            <span>Informações Gerais</span>
+            <ul class="lista_caracteristicas">
+               <!--Apresenta caracteristicas do pokemon como "Espécie", "Tamanho", "Peso" e "habilidades"-->
+               <li><span class="campo">Espécie:</span>
+                  <span class="valor" id="txt_especie">Valor</span>
+               </li>
+               <li><span class="campo">Tamanho:</span>
+                  <span class="valor" id="txt_tamanho">Valor</span>
+               </li>
+               <li><span class="campo">Peso:</span>
+                  <span class="valor" id="txt_peso">Valor</span>
+               </li>
+               <li><span class="campo">Habilidades:</span>
+                  <span class="valor" id="txt_habilidades">Valor</span>
+               </li>
+            </ul>
+            <span>Status</span>
+            <ul>
+               <li><span id="stats1">status 1</span>
+                  <div class="barra_background">
+                     <div class="barra_status_1" id="barra_status_1"></div>
+                  </div>
+               </li>
+               <li><span id="stats2">status 2</span>
+                  <div class="barra_background">
+                     <div class="barra_status_2" id="barra_status_2"></div>
+                  </div>
+               </li>
+               <li><span id="stats3">status 3</span>
+                  <div class="barra_background">
+                     <div class="barra_status_3" id="barra_status_3"></div>
+                  </div>
+               </li>
+               <li><span id="stats4">status 4</span>
+                  <div class="barra_background">
+                     <div class="barra_status_4" id="barra_status_4"></div>
+                  </div>
+               </li>
+               <li><span id="stats5">status 5</span>
+                  <div class="barra_background">
+                     <div class="barra_status_5" id="barra_status_5"></div>
+                  </div>
+               </li>
+            </ul>
+          </div>
+          </div>
+         </div>
+
+   </div>
 
  </section>
-
 
 </body>
 

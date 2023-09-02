@@ -1,7 +1,7 @@
 const pokemonLista = document.getElementById('listaPokemon');
 const botaoCarregar = document.getElementById('mostrarMais');
 const carregarPokemon = document.getElementById('details_poke');
-const modal_detalhes = document.getElementById('modal');
+const modal_detalhes = document.getElementById('fundo_back');
 let listaPokemons = [];
 let pokemo = new Pokemon();
 
@@ -26,6 +26,10 @@ function convertPokemonToLi(pokemon){
     </div>
 </li>
     `
+}
+
+function convertTypesToHTML(pokemon){
+ return pokemon.types.map((type) => `<li id="txt_type1">${type}</li>`).join('');
 }
 
 
@@ -60,12 +64,14 @@ function carregarPokemonUnico(numero) {
     let index = numero - 1;
 
     let visibilidade = modal_detalhes.style.display
-    if(visibilidade == "none"){
-        modal_detalhes.style.display = "block";
-        carregarDetalhesHTML(listaPokemons[index])
 
+    if(visibilidade == "none"){
+        modal_detalhes.style.display = "flex";
+        carregarDetalhesHTML(listaPokemons[index])
+        
     }else{
         fecharModal();
+        
     }
 
     console.log(listaPokemons[index])
@@ -73,10 +79,15 @@ function carregarPokemonUnico(numero) {
 
 
 function carregarDetalhesHTML(pokemon){
+ ele_modal_pokemon = document.getElementById("modal")
+ ele_modal_pokemon.style.backgroundColor = definirCorType(pokemon.type)
+ 
  ele_nome = document.getElementById("txt_nome").textContent = pokemon.name;
  ele_numero = document.getElementById("txt_numero").textContent = "#" + pokemon.ordem;
- ele_type1 = document.getElementById("txt_type1").textContent = pokemon.types[0];
- ele_type2 = document.getElementById("txt_type2").textContent = pokemon.types[1];
+
+ 
+ ele_ol_types = document.getElementById("ol_detalhe_pokemon");
+ ele_ol_types.innerHTML = convertTypesToHTML(pokemon);
  ele_especie = document.getElementById("txt_especie").textContent = pokemon.especie;
  ele_tamanho = document.getElementById("txt_tamanho").textContent = pokemon.tamanho;
  ele_peso = document.getElementById("txt_peso").textContent = pokemon.peso;
@@ -99,3 +110,68 @@ function carregarDetalhesHTML(pokemon){
 function fecharModal(){
     modal_detalhes.style.display = "none"
 }
+
+function definirCorType(tipo) {
+    let cor;
+    switch(tipo){
+        case 'normal':
+         cor = "#a6a877";   
+        break;
+        case 'grass':
+         cor = "#77c850"    
+        break;
+        case 'water':
+         cor = "#678fee"    
+        break;
+        case 'electric':
+         cor = "#f7cf2e"    
+        break;
+        case 'fire':
+         cor = "#ee7f30"    
+        break;
+        case 'ice':
+         cor = "#98d5d7"    
+        break;
+        case 'ground':
+         cor = "#dfbf69"    
+        break;
+        case 'flying':
+         cor = "#a98ff0"    
+        break;
+        case 'poison':
+         cor = "#a040a0"    
+        break;
+        case 'fighting':
+         cor = "#bf3029"    
+        break;
+        case 'psychic':
+         cor = "#f65687"    
+        break;
+        case 'dark':
+         cor = "#725847"    
+        break;
+        case 'rock':
+         cor = "#b8a137"    
+        break;
+        case 'bug':
+         cor = "#a8b720"    
+        break;
+        case 'ghost':
+         cor = "#6e5896"    
+        break;
+        case 'steel':
+         cor = "#b9b7cf"    
+        break;
+        case 'dragon':
+         cor = "#6f38f6"    
+        break;
+        case 'fairy':
+         cor = "#f9aec7"    
+        break;    
+        default:
+            cor = "#a6a877";
+    }
+
+    return cor;
+}
+

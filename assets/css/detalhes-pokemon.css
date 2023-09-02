@@ -1,28 +1,45 @@
-.modal_pokemon {
-    background-color: #46d1b1;
-    border-radius: 1rem;
+.fundo_escuro {
+    z-index: 1;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
     display: none;
+    width: 100vw;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+}
+
+ .fundo_escuro .modal_pokemon {
+    border-radius: 1rem;
     position: absolute;
-    z-index: 4;
-    margin: 0;
-   
+    box-shadow: 0px 0px 8px rgb(105, 104, 104);
+    width: 393px;
+    height: 851px;
+    min-height: 851px;
+    min-width: 393px;
+    z-index: 5;
 }
 
 .botoes {
-    padding: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
-.detalhes_pokemon {
-    display: block;
-    padding-top: .20rem;
+    transition: linear;
 }
 
-.detalhes_pokemon .name_pokemon{
-    padding-left: 1rem;
-    padding-right: 1rem;
+.botoes i {
+    border-radius: 50%;
+    padding: 10px;
 }
+.botoes i:hover {
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
 .detalhes_pokemon .numero_pokemon{
  float: right;
  margin-right: 1rem;
@@ -50,12 +67,15 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 10rem;
+    height: 10rem;
 }
 
 .name_pokemon {
-    padding: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin: 0.25rem;
-    font-size: 2rem;
+    font-size: 2.3rem;
     color: #ffffff;
 
 }
@@ -87,11 +107,11 @@
     border-radius: 1rem;
     display: grid;
     grid-template-columns: 1fr;
+    height: 100%;
 }
 .detalhamento_status span {
     font-weight: bold;
 }
-
 .detalhamento_status ul {
     list-style: none;
     display: grid;
@@ -102,18 +122,12 @@
 .detalhamento_status ul li{
     color: grey;
     font-size: 1rem;
+    margin: 2.2px;
 }
-
 .botoes i {
     color: white;
     font-size: 1.5rem;
 }
-.botoes i:hover{
-    background-color: white;
-    border-radius: 50%;
-}
-
-
 .barra_background {
     position: relative;
     background-color: #E8F1F2;
@@ -121,21 +135,21 @@
     width: 100%;
     height: 1rem;
 }
-
 .barra_background .barra_status_1 {
     position: absolute;
     background-color: #d4160f;
     height: 1rem;
     width: 100%;
+    max-width: 100%;
     border-radius: 10px;
     margin: 2px;
 }
-
 .barra_background .barra_status_2 {
     position: absolute;
     background-color: #0fc1d4;
     height: 1rem;
     width: 100%;
+    max-width: 100%;
     border-radius: 10px;
 }
 .barra_background .barra_status_3 {
@@ -143,6 +157,7 @@
     background-color: #0f3dd4;
     height: 1rem;
     width: 100%;
+    max-width: 100%;
     border-radius: 10px;
 }
 .barra_background .barra_status_4 {
@@ -151,6 +166,7 @@
     height: 1rem;
     width: 100%;
     border-radius: 10px;
+    max-width: 100%;
 }
 .barra_background .barra_status_5 {
     position: absolute;
@@ -158,53 +174,11 @@
     height: 1rem;
     width: 100%;
     border-radius: 10px;
-}
-.imagem_detalhe_pokemon{
-width: 40%;
-height: 40%;
-
+    max-width: 100%;
 }
 .lista_caracteristicas li {
- width: 80%;
+ width: 100%;
  display: grid;
  grid-template-columns: 1fr 1fr;
-}
-
-@media screen and (min-width: 380px) {
-    .modal_pokemon {
-        width: 100%;
-        height: 100%;
-        margin: 0px;
-        left: 50%;
-        top: 0.5rem;
-        transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
-}
-
-
-
-@media screen and (min-width: 576px) {
-    .modal_pokemon {
-        width: 576px;
-        height: 100%;
-        margin: 0px;
-        left: 50%;
-        top: 0.5rem;
-        transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
-}
-
-
-@media screen and (min-width: 992px) {
-    .modal_pokemon {
-        width: 576px;
-        height: 100%;
-        margin: 0px;
-        left: 50%;
-        top: 0.5rem;
-        transform: translateX(-50%);
-
-    }
+ justify-content: left;
 }

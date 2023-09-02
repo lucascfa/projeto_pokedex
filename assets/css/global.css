@@ -9,29 +9,13 @@
 body {
     background-color: #f6f8fc;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 .content {
-    height: 100vw;
-    width: 100vh;
     padding: 1rem;
     background-color: white;
-    position: relative;
-}
-
-@media screen and (min-width: 992px) {
-    .content {
-        max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
-    }
-}
-
-@media screen and (min-width: 576px) {
-    .content {
-        max-width: 100%;
-        height: auto;
-
-        border-radius: 1rem;
-    }
+    width: 992px;
+    margin: 10px;
+    border-radius: 10px;
 }
