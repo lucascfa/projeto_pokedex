@@ -5,6 +5,7 @@ Projeto iniciado no Bootcamp Santander, no módulo Javascript.
 A página web consiste em uma consulta de pokemons de forma dinâmica. 
 
 Algumas funcionalidades foram adicionadas além do solitado no bootcamp Santander. Como exemplo, a consulta do total de pokemons que consta na API. Por meio dessa consulta inicial, caso surja novos pokemons, a tela conseguirá capturar esses novos pokemons também.
+
 A página está responsiva para até 3 tamanhos diferentes de telas.
 
 
