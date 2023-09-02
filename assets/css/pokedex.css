@@ -16,6 +16,14 @@
  border-radius: 1rem;
 }
 
+.pokemons li{
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.pokemons li:hover {
+    opacity: 0.8;
+}
 
 .pokemon .number {
     color: white;
