@@ -61,11 +61,7 @@ botaoCarregar.addEventListener('click', ()=>{
 
 function carregarPokemonUnico(numero) {
     let index = numero - 1;
-
-    let visibilidade = modal_detalhes.style.display
-    console.log("teste")
-
-    if(visibilidade == "none"){
+    if(modal_detalhes.style.display == "none"){
         modal_detalhes.style.display = "flex";
         carregarDetalhesHTML(listaPokemons[index])
     }else{
