@@ -21,7 +21,6 @@ function convertePokeApiDetailToPokemon(pokeDetail){
  pokemo.type = type;
 
  pokemo.image = pokeDetail.sprites.other.dream_world.front_default;
- console.log("nome "+pokemo.name)
 
 return pokemo;
 
@@ -52,7 +51,6 @@ pokeApi.getTotalPokemons = () => {
     .then((response) => response.json())
     .then((jsonBody) => {
         totalPokemon = jsonBody.count
-        console.log("Total de pokemons " + totalPokemon)
         return jsonBody.count})   
 }
 pokeApi.getPokemon = (id) => {

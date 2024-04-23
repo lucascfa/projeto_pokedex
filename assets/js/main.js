@@ -49,7 +49,6 @@ botaoCarregar.addEventListener('click', ()=>{
         const qtd_proxima_page = offset + limit;
     if(qtd_proxima_page >= totalPokemon){
         const novo_limite = totalPokemon - offset;
-        console.log("offset maior que total: "+ totalPokemon + "offset: " + offset)
         carregarMais(offset, novo_limite);
         botaoCarregar.parentElement.removeChild(botaoCarregar);
         
@@ -64,17 +63,14 @@ function carregarPokemonUnico(numero) {
     let index = numero - 1;
 
     let visibilidade = modal_detalhes.style.display
+    console.log("teste")
 
     if(visibilidade == "none"){
         modal_detalhes.style.display = "flex";
         carregarDetalhesHTML(listaPokemons[index])
-        
     }else{
         fecharModal();
-        
     }
-
-    console.log(listaPokemons[index])
 }
 
 
